@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for & v-if</title>
+</head>
+<body>
+    
+    <div id="ejemplo2">
+        <h1>{{titulo}}</h1>
+        <ul>
+            <!-- v-for repite una etiqueta. Así que lo pongo dentro de la etiqueta que quiero repetir -->
+            <!-- Recorre el array con la estructura for-of -->
+            <li v-for='fruta of frutas'>Fruta</li>     
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="v-for-v-if.js"></script>
+</body>
+</html>
