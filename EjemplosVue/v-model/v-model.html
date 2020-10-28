@@ -9,17 +9,21 @@
     
     <div id="ejemplo2">
         <h1>{{titulo}}</h1>
+
+    <input type="text" v-model="nuevaFruta">
+        <!-- <button v-on:click="agregarFruta">Clic para agregar</button> -->
+        <button @click="agregarFruta">Agregar fruta</button><!-- Ya está linkeado el botón con un método de mi objeto de tipo Vue -->
+
         <ul>
-            <!-- v-for repite una etiqueta. Así que lo pongo dentro de la etiqueta que quiero repetir -->
-            <!-- Recorre el array con la estructura for-of -->
             <li v-for='fruta of frutas'>{{fruta.cantidad}} = {{fruta.nombre}}
-                <!-- Si se cumple la condición, muestra el texto. Si no se cumple, no lo muestra. -->
+                <button @click="fruta.cantidad++">+</button>
                 <span v-if="fruta.cantidad===0"> - Sin stock</span>
             </li>     
         </ul>
+        <h4>Total: {{sumarFrutas}}</h4>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="v-for-v-if.js"></script>
+    <script src="v-model.js"></script>
 </body>
 </html>
