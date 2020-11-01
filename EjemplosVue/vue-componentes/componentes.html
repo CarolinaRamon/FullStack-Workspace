@@ -1,0 +1,54 @@
+<!-- Este es un ejemplo con componentes en el mismo archivo.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo con componentes</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- <h1>{{msj}}</h1> -->
+        <h1>Título</h1>
+        <saludo></saludo>  
+        <saludo></saludo>  
+        <contador></contador>  
+        <contador></contador>  
+    </div>
+
+    <!-- Instancia de Vue -->
+    <script>
+        //COMPONENTE DE VUE:
+        Vue.component('saludo',{
+            //template: '<h1>Hola estático</h1>', //propiedad: defino la estructura del componente en etiquetas html
+            template: '<h1>{{msj}}</h1>',
+            data(){//data acá en el componente es un método que retorna un objeto:
+                 return{
+                     msj: 'Hola dinámico (componente saludo)'
+                 }
+             }
+        })
+
+        Vue.component('contador',{
+            template: '<h1>{{msj}}</h1>',
+            data(){
+                 return{
+                     msj: 'Hola dinámico (componente contador)'
+                 }
+             }
+        })
+
+            //El enlace lo gestiona esta instancia:
+        var app = new Vue({
+            el: '#app',
+            // data:{//Ahora la info la obtengo del propio componente, ya no de la instancia de Vue, porque justamente lo que busco es la independencia de los componentes.
+            //     msj: 'Hola, Mundo!'
+            // }
+        })
+        app.msj= "Hola, Caro!";
+    </script>
+</body>
+</html>
