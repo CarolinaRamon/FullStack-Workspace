@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Fetch & Archivo de texto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-5 text-center">
+        <h1>Ejemplo Fetch</h1>
+        <p>En este ejemplo, FETCH trae info desde un archivo de texto con extensión .txt</p>
+        <button class="btn btn-danger w-100" onclick="traer()">Obtener texto</button>
+        <!-- onclick dispara la función traer -->
+        <div class="mt-5" id="contenido">
+            <img src="">
+        </div>
+
+    </div>
+
+    <script>
+        //Obtengo el elemento html por su id y lo guardo en una variable:
+        var contenido = document.querySelector('#contenido');
+
+        function traer() {
+            fetch('texto.txt')
+                .then(data => data.text())//la primera promesa transforma el dato en texto con .text
+                .then(data => {
+                    console.log(data)//Muestro por consola.
+                    contenido.innerHTML = `${data}`//Imprimo en pantalla el dato que me devuelve el fetch.
+                })
+        }
+    </script>
+</body>
+
+</html>
