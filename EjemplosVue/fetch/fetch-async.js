@@ -13,17 +13,7 @@ const getNombreAsync = async(idPost) => {
     } catch (error) {//Manejo de errores. La información del error queda almacenada en la variable error.
         console.log(error);
     }
-    
-        // console.log(post.title);
-        // console.log(post.body);
-    //     fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
-    //     .then(res =>{
-    //         return res.json()
-    //     })
-    //     .then(user => {
-    //         console.log(user.name);
-    //     })
-    // })
+
 }
 
 
